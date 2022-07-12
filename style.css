@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    padding-top: 150px;
+    background: linear-gradient(-45deg, #565656, #d5acbc, #566970, #bdd8d2);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 25px;
+    margin: 120px 0px;
+    color: white;
+    text-align: center;
+}
+
+h1 span {
+    display: block;
+    color: #252929;
+}
+a{
+    text-decoration: none;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.loader {
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    animation: rotate 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader::before {
+    background-color: #fc3f9e;
+}
+
+.loader::after {
+    background-color: #50e8f3;
+    animation-delay: .5s;
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        left: 95px;
+    }
+
+    25% {
+        transform: scale(0.3);
+    }
+
+    50% {
+        left: 0;
+    }
+
+    75% {
+        transform: scale(1);
+    }
+}
